@@ -108,15 +108,6 @@ public class PlayerController : MonoBehaviour
         if (other.gameObject.CompareTag("Enemy"))
         {
             Debug.Log("Collided with Gomba!");
-            // for (int i=0; i < 10 ; i++){
-            //     marioBody.velocity = Vector2.zero;
-            //     marioSprite.sprite = deadMario;
-            //     marioBody.velocity = Vector2.zero;
-            //     Time.timeScale = 0.5f;
-            //     marioSprite.sprite = aliveMario;
-            //     marioBody.velocity = Vector2.zero;
-                
-            // }
 
             if (int.Parse(scoreText.text) > hs){
                 hs = int.Parse(scoreText.text);

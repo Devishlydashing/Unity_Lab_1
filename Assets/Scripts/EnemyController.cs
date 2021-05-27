@@ -5,7 +5,7 @@ using UnityEngine;
 public class EnemyController : MonoBehaviour
 {
     private float originalX;
-    private float maxOffset = 5.0f;
+    private float maxOffset = 10.0f;
     private float enemyPatroltime = 2.0f;
     private int moveRight = -1;
     private Vector2 velocity;
@@ -50,7 +50,7 @@ public class EnemyController : MonoBehaviour
     // Since the Enemy object has been flagged as a Trigger. 
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.CompareTag("Enemy"))
+        if (other.gameObject.CompareTag("Player"))
         {
             Debug.Log("Collided with Mario!");
         }
