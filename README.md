@@ -1,4 +1,4 @@
-# Unity_Lab_1
+# Unity_Lab_2
 
 by Dev Bahl
 
