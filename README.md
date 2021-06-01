@@ -1,4 +1,4 @@
-# Unity_Lab_1
+# Unity_Weekly_Lab
 
 by Dev Bahl
 
