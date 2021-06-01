@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Ground
   - Enemy
+  - Obstacle
+  - Pipe
   layers:
   - Default
   - TransparentFX
@@ -13,13 +15,13 @@ TagManager:
   - 
   - Water
   - UI
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - Player
+  - Ground
+  - Background
+  - Obstacles
+  - PostProcessing
+  - QuestionBox
+  - Spawned
   - 
   - 
   - 
@@ -40,6 +42,9 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: Background
+    uniqueID: 2019544165
+    locked: 0
   - name: Default
     uniqueID: 0
     locked: 0
