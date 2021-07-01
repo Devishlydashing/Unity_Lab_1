@@ -1,5 +1,4 @@
-# Unity_Lab_2
+# Unity_Lab_3
 
 by Dev Bahl
 
-[YouTubeLink](https://youtu.be/AvBGnH89SjI)
