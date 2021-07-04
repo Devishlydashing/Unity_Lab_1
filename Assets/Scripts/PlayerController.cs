@@ -9,13 +9,15 @@ public class PlayerController : MonoBehaviour
     void Awake(){}
 
     // Creates a speed field in Unity for you to input 
-    public float speed;
+    
     private Rigidbody2D marioBody;
     private SpriteRenderer marioSprite;
     private Vector3 marioBodyDefaultPosition;
     private bool faceRightState = true;
-    public float maxSpeed = 10;
-    public float upSpeed;
+    public GameConstants gameConstants;
+    public float speed;
+    // public float maxSpeed = 10;
+    // public float upSpeed;
     private bool onGroundState = true;
     // public Transform enemyLocation;
     public Text scoreText;
@@ -26,8 +28,10 @@ public class PlayerController : MonoBehaviour
     private int score = 0;
     private int hs = 0;
     private bool countScoreState = false;
+    public bool isDead = false;
     private  Animator marioAnimator;
     private AudioSource marioAudio;
+    // public  static  event  gameEvent OnPlayerDeath;
 
 
     // Start is called before the first frame update
@@ -42,6 +46,8 @@ public class PlayerController : MonoBehaviour
         marioBodyDefaultPosition = marioBody.transform.position;
         marioAnimator  =  GetComponent<Animator>();
         marioAudio = GetComponent<AudioSource>();
+        // Subscribe
+        GameManager.OnPlayerDeath += PlayerDiesSequence;
 
     }
     
@@ -57,13 +63,13 @@ public class PlayerController : MonoBehaviour
         float moveHorizontal = Input.GetAxis("Horizontal");
         if (Mathf.Abs(moveHorizontal) > 0){
             Vector2 movement = new Vector2(moveHorizontal, 0);
-            if (marioBody.velocity.magnitude < maxSpeed)
+            if (marioBody.velocity.magnitude < gameConstants.playerMaxSpeed)
                 marioBody.AddForce(movement * speed);
         }
 
         if (Input.GetKeyDown("space") && onGroundState)
         {
-            marioBody.AddForce(Vector2.up * upSpeed, ForceMode2D.Impulse);
+            marioBody.AddForce(Vector2.up * gameConstants.playerDefaultForce, ForceMode2D.Impulse);
             onGroundState = false;
             countScoreState = true; //check if Gomba is underneath
         }
@@ -150,6 +156,23 @@ public class PlayerController : MonoBehaviour
 
     void  PlayJumpSound(){
 	    marioAudio.PlayOneShot(marioAudio.clip);
+    }
+
+    void PlayerDiesSequence()
+    {
+        // Mario Dies
+        isDead = true;
+        marioAnimator.SetBool("isDead", true);
+        GetComponent<Collider2D>().enabled = false;
+        marioBody.AddForce(Vector2.up  *  30, ForceMode2D.Impulse);
+        marioBody.gravityScale = 30;
+        StartCoroutine(dead());
+    }
+
+    IEnumerator dead()
+    {
+        yield return new WaitForSeconds(1.0f);
+        marioBody.bodyType = RigidbodyType2D.Static;
     }
 
 }
