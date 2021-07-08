@@ -8,19 +8,20 @@ public class SpawnManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        // GameManager.OnEnemyDeath += spawnNewEnemy;
+        GameManager.OnEnemyDeath += spawnNewEnemy;
         // SceneManager.sceneLoaded += startSpawn;
+        startSpawn();
         for (int j = 1; j< 2; j++){
             spawnFromPooler(ObjectType.greenEnemy);
         } 
     }
 
-    // void startSpawn()
-    // {
-    //     for (int j = 0; j < 2; j++){
-    //         spawnFromPooler(ObjectType.gombaEnemy);
-    //     }
-    // }
+    void startSpawn()
+    {
+        for (int j = 0; j < 2; j++){
+            spawnFromPooler(ObjectType.gombaEnemy);
+        }
+    }
 
     void spawnFromPooler(ObjectType i)
     {
@@ -47,7 +48,7 @@ public class SpawnManager : MonoBehaviour
 
     void OnDestroy()
     {
-        // GameManager.OnEnemyDeath -= spawnNewEnemy;
+        GameManager.OnEnemyDeath -= spawnNewEnemy;
     }
 
     // Update is called once per frame

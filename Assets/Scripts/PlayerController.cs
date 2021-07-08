@@ -98,6 +98,14 @@ public class PlayerController : MonoBehaviour
         }
         }
 
+        if (Input.GetKeyDown("z")){
+	        CentralManager.centralManagerInstance.consumePowerup(KeyCode.Z,this.gameObject);
+        }
+
+        if (Input.GetKeyDown("x")){
+            CentralManager.centralManagerInstance.consumePowerup(KeyCode.X,this.gameObject);
+        }
+
 
         marioAnimator.SetFloat("xSpeed", Mathf.Abs(marioBody.velocity.x));
         marioAnimator.SetBool("onGround", onGroundState);

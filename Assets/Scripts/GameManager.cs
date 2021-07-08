@@ -12,6 +12,7 @@ public class GameManager : MonoBehaviour
     public  static  event  gameEvent OnEnemyDeath;
 
 
+
 	public  void  increaseScore(){
 		playerScore  +=  1;
 		score.text  =  "SCORE: "  +  playerScore.ToString();

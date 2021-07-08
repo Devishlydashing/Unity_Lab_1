@@ -1,0 +1,33 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+
+public  class RedMushroom : MonoBehaviour, ConsumableInterface
+{
+    public GameConstants gameConstants;
+	public  Texture t;
+	public  void  consumedBy(GameObject player){
+		// give player jump boost
+        gameConstants.playerMaxJumpSpeed += 10;
+		// player.GetComponent<PlayerController>().playerMaxJumpSpeed  +=  10;
+		StartCoroutine(removeEffect(player));
+	}
+
+	IEnumerator  removeEffect(GameObject player){
+		yield  return  new  WaitForSeconds(5.0f);
+        gameConstants.playerMaxJumpSpeed -= 10;
+		// player.GetComponent<PlayerController>().playerMaxJumpSpeed  -=  10;
+	}
+
+    void  OnCollisionEnter2D(Collision2D col)
+    {
+        if (col.gameObject.CompareTag("Player")){
+            // update UI
+            CentralManager.centralManagerInstance.addPowerup(t, 0, this);
+            GetComponent<Collider2D>().enabled  =  false;
+        }
+    }
+
+}
+

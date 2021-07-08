@@ -7,6 +7,9 @@ public class CentralManager : MonoBehaviour
     public  GameObject gameManagerObject;
 	private  GameManager gameManager;
 	public  static  CentralManager centralManagerInstance;
+    // add reference to PowerupManager
+    public  GameObject powerupManagerObject;
+    private  PowerupManager powerUpManager;
 
     void  Awake()
     {
@@ -17,6 +20,8 @@ public class CentralManager : MonoBehaviour
     void Start()
     {
         gameManager  =  gameManagerObject.GetComponent<GameManager>();
+        // instantiate in start
+        powerUpManager  =  powerupManagerObject.GetComponent<PowerupManager>();
     }
 
     // Update is called once per frame
@@ -35,4 +40,16 @@ public class CentralManager : MonoBehaviour
         Debug.Log("Central Manager: increaseScore()");
 		gameManager.increaseScore();
 	}
+
+   
+
+
+    public  void  consumePowerup(KeyCode k, GameObject g){
+        powerUpManager.consumePowerup(k,g);
+    }
+
+    public  void  addPowerup(Texture t, int i, ConsumableInterface c){
+        powerUpManager.addPowerup(t, i, c);
+    }
+
 }
