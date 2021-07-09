@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 6704382280909910983}
   - component: {fileID: 8937381191755327326}
   - component: {fileID: 9211526335807536787}
-  - component: {fileID: 1122604218728068013}
   - component: {fileID: 615646292384675384}
   m_Layer: 12
   m_Name: OrangeMushroom
@@ -134,18 +133,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!114 &1122604218728068013
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5413311024167319018}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 376a0306c3bd34a8bad9e94613f34dc3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &615646292384675384
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -159,4 +146,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameConstants: {fileID: 11400000, guid: d07efc5e57eaf403d964cc3d1904c0a9, type: 2}
-  t: {fileID: 2800000, guid: a733acfd43bb74963bb6b355833a9d2e, type: 3}
+  t: {fileID: 2800000, guid: 68e456ae1fb4945398899aa18fa16a89, type: 3}

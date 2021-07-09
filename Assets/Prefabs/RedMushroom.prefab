@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 5424522511726604762}
   - component: {fileID: 1705515875967910175}
   - component: {fileID: 3183787339594960994}
-  - component: {fileID: 2127105227789020268}
   - component: {fileID: 1160430771711831927}
   m_Layer: 12
   m_Name: RedMushroom
@@ -29,8 +28,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8277945511048122466}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.3338, y: -0.2535, z: 0}
-  m_LocalScale: {x: 0.09721667, y: 0.09721667, z: 0.09721667}
+  m_LocalPosition: {x: -0.3338, y: -0.071888, z: 0}
+  m_LocalScale: {x: 0.11080401, y: 0.11080401, z: 0.11080401}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -134,18 +133,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 6.470395, y: 6.3812017}
   m_EdgeRadius: 0
---- !u!114 &2127105227789020268
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8277945511048122466}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 376a0306c3bd34a8bad9e94613f34dc3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1160430771711831927
 MonoBehaviour:
   m_ObjectHideFlags: 0

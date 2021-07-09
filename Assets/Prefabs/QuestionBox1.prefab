@@ -155,7 +155,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300048, guid: 855dc7396df3c4e49ac4d21234eac5e1, type: 3}
+  m_Sprite: {fileID: -4016574229998233168, guid: 855dc7396df3c4e49ac4d21234eac5e1, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -246,7 +246,7 @@ MonoBehaviour:
   springJoint: {fileID: 4226475560818691519}
   consummablePrefab: {fileID: 5413311024167319018, guid: 12a02fb16947f4a289af14318d9befa1, type: 3}
   spriteRenderer: {fileID: 4226475560818691514}
-  usedQuestionBox: {fileID: 21300054, guid: 855dc7396df3c4e49ac4d21234eac5e1, type: 3}
+  usedQuestionBox: {fileID: 6363912815652929497, guid: 855dc7396df3c4e49ac4d21234eac5e1, type: 3}
 --- !u!1 &4226475561718799328
 GameObject:
   m_ObjectHideFlags: 0

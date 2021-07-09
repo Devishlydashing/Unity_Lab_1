@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: GameConstants
   m_EditorClassIdentifier: 
   groundDistance: -4.35
-  playerMaxSpeed: 10
+  playerMaxSpeed: 7
   playerMaxJumpSpeed: 10
   playerDefaultForce: 35
   maxOffset: 10

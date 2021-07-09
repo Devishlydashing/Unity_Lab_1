@@ -39,7 +39,7 @@ public class QuestionBoxController : MonoBehaviour
             StartCoroutine(DisableHittable());
             // Increase score
             Debug.Log("Increase score on collision with Question Box");
-            CentralManager.centralManagerInstance.increaseScore();
+            // CentralManager.centralManagerInstance.increaseScore();
 
         }
     }

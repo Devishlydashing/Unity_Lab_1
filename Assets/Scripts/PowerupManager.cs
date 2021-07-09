@@ -11,15 +11,19 @@ public  class PowerupManager : MonoBehaviour
 	void  Start()
 	{
 		powerups  =  new  List<ConsumableInterface>();
-		for (int i =  0; i<powerupIcons.Count; i++){
+		for (int i =  0; i < powerupIcons.Count; i++){
 			powerupIcons[i].SetActive(false);
 			powerups.Add(null);
+            Debug.Log("Powerup is active and added!" + i);
 		}
 	}
 
     public  void  addPowerup(Texture texture, int index, ConsumableInterface i){
 	    Debug.Log("adding powerup");
+        Debug.Log("powerupIcons.Count " + powerupIcons.Count);
         if (index  <  powerupIcons.Count){
+            Debug.Log("index " + index);
+            Debug.Log("powerupIcons[index] ", powerupIcons[index]);
             powerupIcons[index].GetComponent<RawImage>().texture  =  texture;
             powerupIcons[index].SetActive(true);
             powerups[index] =  i;
