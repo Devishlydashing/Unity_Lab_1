@@ -73,6 +73,7 @@ public  class EnemyController : MonoBehaviour
 		CentralManager.centralManagerInstance.increaseScore();
 		StartCoroutine(flatten());
 		Debug.Log("Kill sequence ends");
+		CentralManager.centralManagerInstance.spawnNewEnemy();
 	}
 
     IEnumerator  flatten(){
