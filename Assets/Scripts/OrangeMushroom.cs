@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public  class OrangeMushroom : MonoBehaviour, ConsumableInterface
+public  class OrangeMushroom : Singleton<OrangeMushroom>, ConsumableInterface
 {
 
     private float originalX;
@@ -15,6 +15,10 @@ public  class OrangeMushroom : MonoBehaviour, ConsumableInterface
     public GameConstants gameConstants;
 	public  Texture t;
 
+    public override void Awake()
+    {
+        base.Awake();
+    }
     public void Start()
     {
         mushroomBody = GetComponent<Rigidbody2D>();

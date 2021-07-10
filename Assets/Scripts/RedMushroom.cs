@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-public  class RedMushroom : MonoBehaviour, ConsumableInterface
+public  class RedMushroom : Singleton<RedMushroom>, ConsumableInterface
 {
     private float originalX;
     private float maxOffset = 10.0f;
@@ -15,6 +15,10 @@ public  class RedMushroom : MonoBehaviour, ConsumableInterface
     public GameConstants gameConstants;
 	public  Texture t;
 
+    public override void Awake()
+    {
+        base.Awake();
+    }
     public void Start()
     {
         mushroomBody = GetComponent<Rigidbody2D>();

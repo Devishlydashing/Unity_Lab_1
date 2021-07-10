@@ -730,7 +730,7 @@ TextureImporter:
     second: tiles_241
   - first:
       213: -4534422244807061230
-    second: tiles_242
+    second: PipeSide
   - first:
       213: 7115570753420123604
     second: tiles_243
@@ -7003,13 +7003,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: tiles_242
+      name: PipeSide
       rect:
         serializedVersion: 2
         x: 32
-        y: 304
-        width: 16
-        height: 16
+        y: 288
+        width: 48
+        height: 32
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}

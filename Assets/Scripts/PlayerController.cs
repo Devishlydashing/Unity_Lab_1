@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class PlayerController : MonoBehaviour
+public class PlayerController : Singleton<PlayerController>
 {
     // Called before start. Can be used to import functions etc.
-    void Awake(){}
+    // void Awake(){}
 
     // Creates a speed field in Unity for you to input 
     
@@ -20,8 +20,8 @@ public class PlayerController : MonoBehaviour
     // public float upSpeed;
     private bool onGroundState = true;
     // public Transform enemyLocation;
-    public Text scoreText;
-    public Text hsText;
+    // public Text scoreText;
+    // public Text hsText;
     public Sprite deadMario;
     public Sprite aliveMario;
     public Sprite defaultMario;
@@ -33,6 +33,12 @@ public class PlayerController : MonoBehaviour
     private AudioSource marioAudio;
     // public  static  event  gameEvent OnPlayerDeath;
 
+
+    override  public  void  Awake(){
+		base.Awake();
+		// Debug.Log("awake called");
+		// other instructions...
+	}
 
     // Start is called before the first frame update
     // Set game object
@@ -129,7 +135,7 @@ public class PlayerController : MonoBehaviour
         {
             onGroundState = true; // back on ground
             countScoreState = false; // reset score state
-            scoreText.text = score.ToString();
+            // scoreText.text = score.ToString();
             Debug.Log("Score updated:"+ score.ToString());
         };
 
@@ -137,7 +143,7 @@ public class PlayerController : MonoBehaviour
         {
             onGroundState = true; // back on ground
             countScoreState = false; // reset score state
-            scoreText.text = score.ToString();
+            // scoreText.text = score.ToString();
             Debug.Log("Score updated:"+ score.ToString());
         };
     }
@@ -149,15 +155,15 @@ public class PlayerController : MonoBehaviour
         // {
         //     Debug.Log("Collided with Gomba!");
 
-        //     if (int.Parse(scoreText.text) > hs){
-        //         hs = int.Parse(scoreText.text);
+            // if (int.Parse(scoreText.text) > hs){
+            //     hs = int.Parse(scoreText.text);
         //         hsText.text = hs.ToString();
         //     }
 
         //     marioBody.position = marioBodyDefaultPosition;
         //     marioSprite.sprite = defaultMario;
         //     score = 0;
-        //     scoreText.text = score.ToString();
+            // scoreText.text = score.ToString();
         // }
     }
 

@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CameraController : MonoBehaviour
+public class CameraController : Singleton<CameraController>
 {
     public  Transform player; // Mario's Transform
     public  Transform endLimit; // GameObject that indicates end of map
@@ -11,6 +11,13 @@ public class CameraController : MonoBehaviour
     private  float startX; // smallest x-coordinate of the Camera
     private  float endX; // largest x-coordinate of the camera
     private  float viewportHalfWidth;
+
+
+    override  public  void  Awake(){
+		base.Awake();
+		// Debug.Log("awake called");
+		// other instructions...
+	}
 
     // Start is called before the first frame update
     void Start()

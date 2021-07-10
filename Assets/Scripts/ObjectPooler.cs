@@ -30,15 +30,16 @@ public  class ExistingPoolItem
 }
 
 
-public class ObjectPooler : MonoBehaviour
+public class ObjectPooler : Singleton<ObjectPooler>
 {
 
     public static ObjectPooler SharedInstance;
     public  List<ObjectPoolItem> itemsToPool; // types of different object to pool
     public  List<ExistingPoolItem> pooledObjects; // a list of all objects in the pool, of all types
 
-    void Awake()
+    override public void Awake()
     {
+        base.Awake();
         SharedInstance = this;
         pooledObjects  =  new  List<ExistingPoolItem>();
         Debug.Log("ObjectPooler Awake");
@@ -65,17 +66,23 @@ public class ObjectPooler : MonoBehaviour
         foreach (ExistingPoolItem item in pooledObjects){Debug.Log("pooledObjects:" + item.type);};
     }
 
+    // override  public  void  Awake(){
+	// 	base.Awake();
+	// 	// Debug.Log("awake called");
+	// 	// other instructions...
+	// }
+
     // Start is called before the first frame update
-    void Start()
-    {
+    // void Start()
+    // {
         
-    }
+    // }
 
     // Update is called once per frame
-    void Update()
-    {
+    // void Update()
+    // {
         
-    }
+    // }
 
     public  GameObject  GetPooledObject(ObjectType type)
     {   

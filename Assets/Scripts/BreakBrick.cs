@@ -2,12 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BreakBrick : MonoBehaviour
+public class BreakBrick : Singleton<BreakBrick>
 {
     // private bool broken = false;
     public GameObject prefab;
     public GameObject coin;
 
+    public override void Awake()
+    {
+        base.Awake();
+    }
     // Start is called before the first frame update
     void Start()
     {

@@ -30,7 +30,7 @@ public class SpawnManager : MonoBehaviour
         if (item != null)
         {
             //set position
-            // item.transform.localScale = new Vector3(1, 1, 1);
+            // item.transform.localScale = new Vector3(1, 1, 1); 
             item.transform.position = new Vector3(Random.Range(-4.5f, 4.5f), gameConstants.groundDistance + item.GetComponent<SpriteRenderer>().bounds.extents.y, 0);
             item.SetActive(true);
         }
